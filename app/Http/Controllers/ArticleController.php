@@ -1,22 +1,36 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-class articaleController extends Controller
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Routing\UrlGenerator;
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
+    protected $auth;
+
+
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     public function index()
     {
-        //
+        $status = "unlogin";
+        if ($this->auth->check()) {
+            $status = "logined";
+            return view('layouts.article',['loginStauts'=>$status]);
+        }
+        return view('layouts.article',['loginStauts'=>$status]);
     }
 
     /**

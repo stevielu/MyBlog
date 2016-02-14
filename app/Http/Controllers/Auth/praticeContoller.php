@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,8 +15,11 @@ class praticeContoller extends Controller
      */
     public function index()
     {
+        $status = 'unlogin';
         //
-        pratice();
+        //pratice();
+        return view('layouts.practice',['loginStauts'=>$status]);
+    
     }
 
     /**

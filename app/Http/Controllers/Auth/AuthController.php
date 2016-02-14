@@ -7,6 +7,7 @@ use Validator;
 use Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 
@@ -24,17 +25,34 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
-
+    protected $auth;
+    protected $login;
     /**
      * Create a new authentication controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Guard $auth)
     {
+        
         $this->middleware('guest', ['except' => 'getLogout']);
+        $this->auth = $auth;
+        $this->login ='unlogin';
     }
 
+    public function index()
+    {
+        //$status = "unlogin";
+        if ($this->auth->check()){
+            $status = "logined";
+            //return redirect()->back();
+            // return view('layouts.login',['loginStauts'=>$status]);
+        }
+        else{
+            $status = "unlogin";
+        }
+        return view('layouts.login',['loginStauts'=>$status]);
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -50,16 +68,20 @@ class AuthController extends Controller
         ]);
     }
 
-    public function postLogin(Request $request)
+
+    public function store(Request $request)
     {
         $credentials = $request->only('name', 'password');
-        if (Auth::attempt($credentials, $request->has('remember'))) {
-            $data = response()->json(['redirect' => '/']);
+        if (Auth::attempt($credentials, $request->has('remember'))){
+            $this->login = 'logined';
+            return redirect()->back()->with(['loginStauts'=>$this->login]);
+            //return view('layouts.index',['loginStauts'=>$this->login]);
         }
         else{
-            $data = response()->json(['login' => 'fail']);
+            $this->login = 'fail';
+            return view('layouts.login',['loginStauts'=>$this->login]);
         }
-        return $data; 
+        
     }
     /**
      * Log the user out of the application.

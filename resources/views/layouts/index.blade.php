@@ -75,17 +75,18 @@
         </table>
     </div>
 </div>
-<div class="footer">
-    <h4 style="color: #474747;font-family: SourceSansProLight;text-align: left;position: absolute;left:30.3%">
-        Time flies .......<br>
-        But I still on my way
-    </h4>
-    <div id="clock">
-        <div id="months"></div>
-        <svg class="line">
-            <path fill="none" stroke="rgb(223,210,183)" stroke-width="1" stroke-miterlimit="10" d="M90.333,50.5h106l24,24l24-24h106"></path>
-        </svg>
-    </div>
+<div class = "container footer">
+        <h4 style="color: #474747;font-family: SourceSansProLight;text-align: left;position: absolute;left:30.3%">
+            Time flies .......<br>
+            But I still on my way
+        </h4>
+        <div id="clock">
+            <div id="months"></div>
+            <svg class="line">
+                <path fill="none" stroke="rgb(223,210,183)" stroke-width="1" stroke-miterlimit="10" d="M90.333,50.5h106l24,24l24-24h106"></path>
+            </svg>
+        </div>
 </div>
+<div class = "clearfix"></div>
 <script type="text/javascript" src="{{asset('themes/blog/js/index.js')}}"></script>
 @endsection
