@@ -47,7 +47,12 @@ of those sections to manage the look and feel of the site. */
     text-align: center;
     background: #eee;
 }
-
+.user-login{
+    background-color:#333;border-color:#333;
+}
+.user-login:hover{
+    background-color:rgba(85,85,85,0.67);border-color:rgba(85,85,85,0.67);
+}
 .btn-circle {
     border-radius: 50%;
 }

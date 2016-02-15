@@ -43,7 +43,7 @@
                         </form>
                     </li>
                     <li class="dropdown">
-                        <button href="#" class="btn btn-circle-sm btn-success navbar-btn dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>
+                        <button  href="#" class="user-login btn btn-circle-sm btn-success navbar-btn dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu" style="border-top-left-radius:4px;border-top-right-radius:4px">
                             @if($loginStauts  == 'unlogin')

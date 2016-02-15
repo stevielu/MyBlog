@@ -17,11 +17,11 @@
 
 <div class="container-fluid" >
 	<div class="row">
-		<div class="nav-box">
-			<div id='menu' ng-app = "subMenu">
-				<div ng-controller = "MenuController as menu" ng-init = "menu.urlInit('/Menu','Catagories')">
-					<ul>
-						<li><a  href="#">[[menu.]]</a></li>
+		<div class="nav-box " style="border-bottom:0px solid transparent">
+			<div id='menu' ng-app = "MangeMenu">
+				<div ng-controller = "MenuController as menu" ng-init = "menu.Init('/Menu','Catagories')">
+					<ul class="menu-list">
+						<li ng-repeat = 'list in menu.posts'><a  href="#">[[list.menu_name]]</a></li>
 					</ul>
 				</div>
 			</div>

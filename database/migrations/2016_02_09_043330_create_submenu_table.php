@@ -16,6 +16,7 @@ class CreateSubmenuTable extends Migration
             $table->increments('id')->unsigned();
             $table->integer('menu_id')->unsigned();
             $table->string('submenu_name');
+            $table->string('submenu_link');
             $table->foreign('menu_id')->references('id')->on('menu')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });

@@ -6,7 +6,7 @@ Menu app
 
 (function(){
  
-  var menuList = angular.module('subMenu', []);
+  var menuList = angular.module('MangeMenu', []);
   menuList.config(function($interpolateProvider) {
     $interpolateProvider.startSymbol('[[');
     $interpolateProvider.endSymbol(']]');
@@ -15,16 +15,19 @@ Menu app
   menuList.controller('MenuController', ['$http', function($http){
     
     var menu = this;
+    menu.posts = {};
 
-    this.urlInit = function(url,title){
+    this.Init = function(url,title){
       menu.url = url;
       menu.title = title;
+      $http.get(menu.url).success(function(data){
+        menu.posts = data;
+      });
     };
     
-    menu.posts = {};
-    $http.get('"'+menu.url+'"').success(function(data){
-      menu.posts = data;
-    });
+    
+    
+    
 
     
     // blog.tab = 'blog';

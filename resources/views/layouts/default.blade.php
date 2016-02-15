@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{asset('fonts/font-awesome/css/font-awesome.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{asset('css/fileinput.min.css')}}" type="text/css"/>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
      <!-- Compiled and minified CSS -->
     
 

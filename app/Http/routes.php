@@ -18,7 +18,7 @@ Route::group(['prefix' => '/'], function() {
 	Route::post('asynlogin', 'AsynAuthController@postLogin');
 	Route::resource('login', 'Auth\AuthController');
     Route::resource('Article', 'ArticleController');
-    Route::resource('Menu', 'ArticleController');
+    Route::resource('Menu', 'MenuController');
 	Route::group(['middleware' => 'auth'], function(){
         Route::resource('Albums', 'AlbumsController');
         Route::resource('photos', 'PhotoController',['except' => 'store']);

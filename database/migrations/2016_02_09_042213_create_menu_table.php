@@ -18,8 +18,11 @@ class CreateMenuTable extends Migration
             $table->string('menu_type');
             $table->timestamps();
         });
+        
+        Schema::table('menu', function ($table) {
+            $table->string('menu_link');
+        });
     }
-
     /**
      * Reverse the migrations.
      *

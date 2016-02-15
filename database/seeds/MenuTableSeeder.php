@@ -14,6 +14,7 @@ class MenuTableSeeder extends Seeder
         DB::table('menu')->insert([
             'menu_name' => 'default',
             'menu_type' => 'default',
+            'menu_link' => '#',
         ]);
     }
 }

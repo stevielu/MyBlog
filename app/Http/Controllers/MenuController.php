@@ -1,13 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
+use Validator;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Menu;
 use App\Models\SubMenu;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 class MenuController extends Controller
 {
     /**
@@ -15,9 +19,28 @@ class MenuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    protected $auth;
+    protected $login;
+    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     public function index()
     {
-        //
+        //Get Menu Lists
+        if ($this->auth->check()){
+            $status = "logined";
+        }
+        else{
+            $status = "unlogin";
+        }
+        $this->login = $status;
+        $menu = Menu::with('SubMenu')->get();
+        return response()->json($menu);
     }
 
     /**
