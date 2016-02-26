@@ -41,7 +41,7 @@
 	            		<div class="col-sm-4">
 	              			<h1 ng-click="blog.selectTab('blog')" class="push-left">[[blog.title]]</h1>
 	            		</div>
-			            <div class="offset-s-4 col-s-4">
+			            <div class="offset-sm-4 col-sm-4">
 		              		<nav role='navigation' class="push-right">
 				                <ul>
 				                  	<li><a href="#" ng-click="blog.selectTab('blog')">See All Posts</a></li> 

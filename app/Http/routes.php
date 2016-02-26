@@ -21,6 +21,7 @@ Route::group(['prefix' => '/'], function() {
     Route::resource('Menu', 'MenuController');
 	Route::group(['middleware' => 'auth'], function(){
         Route::resource('Albums', 'AlbumsController');
+        Route::resource('Dashboard', 'DashboardController');
         Route::resource('photos', 'PhotoController',['except' => 'store']);
         Route::post('photos', 'PhotoController@store');
         Route::resource('userinfo', 'FileController');

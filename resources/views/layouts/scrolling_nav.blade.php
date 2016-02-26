@@ -4,62 +4,67 @@
     <link rel="stylesheet" href="{{asset('themes/blog/css/scrolling-nav.css')}}" type="text/css"/>
     <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
-                    <span class="sr-only">切换导航</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+            <div class="row">
+                <div class="navbar-header logo-box col-xs-4 col-sm-3">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand " href="#">STEVIE</a>
+                </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="example-navbar-collapse">
-                <ul class="nav navbar-nav page-active">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li>
-                        <a class="page-scroll" href="/">Home</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="/Article">Article</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="/Albums">Photos</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right" style="margin-right:0">
-                    <!-- Search Bar -->
-                    <li>
-                        <form class="navbar-form" role="search">
-                            <div class="form-group ">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search for...">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                                        </span>
-                                </div><!-- /input-group -->
+            
+                <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                    <ul class="nav navbar-nav page-active">
+                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                        <li>
+                            <a class="page-scroll" href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="/Article">Article</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="/Albums">Photos</a>
+                        </li>
+                        
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" style="margin-right:15px">
+                        <!-- Search Bar -->
+                        <li>
+                            <form class="navbar-form" role="search">
+                                <div class="form-group ">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search for...">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                                            </span>
+                                    </div><!-- /input-group -->
 
-                            </div>
-                        </form>
-                    </li>
-                    <li class="dropdown">
-                        <button  href="#" class="user-login btn btn-circle-sm btn-success navbar-btn dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu" style="border-top-left-radius:4px;border-top-right-radius:4px">
-                            @if($loginStauts  == 'unlogin')
-                            <li role="presentation">
-                                <a role="menuitem" href="#" data-toggle="modal" data-target="#login">Login</a>
-                            </li>
-                            @endif
-                            <li role="presentation"><a role="menuitem" href="#">Dashboard</a></li>
-                            @if($loginStauts == 'logined')
-                            <li role="presentation" class="divider"></li>
-                            
-                            <li role="presentation"><a role="menuitem" href="/logout">Logout</a></li>
-                            @endif
-                        </ul>
-                    </li>
-                </ul>
+                                </div>
+                            </form>
+                        </li>
+                        <li class="dropdown">
+                            <button  href="#" class="user-login btn btn-circle-sm btn-success navbar-btn dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>
+                            </button>
+                            <ul class="dropdown-menu nav-menu" role="menu" style="border-top-left-radius:4px;border-top-right-radius:4px">
+                                @if($loginStauts  == 'unlogin')
+                                <li role="presentation">
+                                    <a role="menuitem" href="#" data-toggle="modal" data-target="#login">Login</a>
+                                </li>
+                                @endif
+                                <li role="presentation"><a role="menuitem" href="/Dashboard">Dashboard</a></li>
+                                @if($loginStauts == 'logined')
+                                <li role="presentation" class="divider"></li>
+                                
+                                <li role="presentation"><a role="menuitem" href="/logout">Logout</a></li>
+                                @endif
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 

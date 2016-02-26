@@ -127,7 +127,7 @@ figcaption a {
 @section('body')
 <div class="container-fluid" >
 	<div class = 'row'>
-	<div class = 'col-md-3' style = "min-height:600px;background-color: #282b34;">
+	<div class = 'col-md-3 left-bar'>
 		<div class="col-md-12 red_line2" style="height:40px">
 			<h4 style="line-height:40px;color: #A9AAAC;">
 				DETAILS

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{asset('fonts/font-awesome/css/font-awesome.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{asset('css/fileinput.min.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}" type="text/css"/>
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
      <!-- Compiled and minified CSS -->
     
@@ -23,6 +24,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="author" content="stevie">
     <script type="text/javascript" src="{{asset('js/jquery-1.11.3.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery-ui.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/ripples.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/material.min.js')}}"></script>
