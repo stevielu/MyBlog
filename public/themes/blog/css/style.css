@@ -721,8 +721,13 @@ svg.line path{
 .larger{
    font-size:1.6em; 
 }
-.larger li{
-    height: 52px;
+
+.submenu-indent .larger{
+    font-size: 15px;
+}
+.submenu-indent .larger li{
+
+    height: 100%;
 }
 .control-panel a{
     color: #EEEEEE; 
@@ -731,8 +736,21 @@ svg.line path{
     width: 50%;
     position: absolute;
     right: -50%;
-    box-shadow: 2px 2px 2px grey;
+    box-shadow: 1px 1px 1px grey;
     display: none;
+    z-index: 999;
+}
+.submenu-indent{
+    width: 100%;
+    position: absolute;
+    right: -100%;
+    box-shadow: 1px 1px 1px grey;
+    display: none;
+    z-index: 999;
+    
+}
+.submenu-indent a{
+    font-size: 1.0em;
 }
 .submenu-1{
     top:0;
@@ -741,13 +759,77 @@ svg.line path{
     top:44px;
 }
 
-.control-panel >li:hover >.submenu{
+.control-panel > panel-page >li:hover > .submenu {
+    display: block;
+}
+.control-panel > panel-page >li:hover > .submenu-indent{
     display: block;
 }
 .submenu a{
     width: 100%;
     border-bottom: 1px solid rgba(204, 204, 204, 0.45);
 }
+.submenu-indent a{
+    width: 100%;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.45);
+}
 .control-panel .submenu a{
     color: #555;
+}
+.control-panel .submenu-indent a{
+    font-size: 15px;
+    line-height: 1.5em;
+    color: #555;
+}
+
+.menu-panel{
+    margin-left: 35px;
+    min-height: 500px;
+    background-color:rgb(132, 209, 219);
+    box-shadow: 1px 1px 1px #999;
+    margin-top: 65px; 
+    border-radius: 5px;
+}
+.menu-panel-headerbox{
+    height: 100px;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 0;
+}
+.border-right{
+    border-right: 1px solid #fff;
+}
+.panel-title{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+.panel-title p{
+    color: #fff;
+    padding: 0;
+    padding-top: 15px;
+}
+.panel-title h3{
+    padding-top: 15px;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+.black-background{
+    background-color:#282B34;
+}
+.menu-panel-bodybox{
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.panel-title p{
+    text-align: center;
+}
+.nested-list > ul > li > ul {
+    margin-left: 15px;
 }

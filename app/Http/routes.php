@@ -27,6 +27,14 @@ Route::group(['prefix' => '/'], function() {
         Route::resource('userinfo', 'FileController');
         Route::post('Albums', 'AlbumsController@store');
         Route::post('photos/{id}', 'PhotoController@postUpdate');
+        Route::get('panel-page', function()
+        {
+            return view('layouts.panel-page');
+        });
+        Route::get('menu-panel', function()
+        {
+            return view('layouts.menu-panel');
+        });
     //     // Route::resource('article', 'ArticleController');
     //     // Route::resource('gallery', 'GalleryController');
     //     // Route::resource('user', 'UserController');
